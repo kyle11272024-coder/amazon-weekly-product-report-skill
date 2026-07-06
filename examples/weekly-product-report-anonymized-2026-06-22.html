@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>单品周报 | 脱敏版 | 2026-06-22 至 2026-06-28</title>
+  <style>
+    :root {
+      --paper: #f5f8fc;
+      --panel: #ffffff;
+      --panel-strong: #eef4ff;
+      --ink: #061a3a;
+      --muted: #5d6c83;
+      --line: #d8e1ee;
+      --line-strong: #a8b8cf;
+      --blue: #0b4ea2;
+      --blue-dark: #061a3a;
+      --blue-soft: #e8f1ff;
+      --risk: #b42318;
+      --warn: #a15c00;
+      --good: #12715f;
+      --info: #1f64c8;
+      --shadow: 0 18px 48px rgba(6, 26, 58, 0.11);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(180deg, #eaf1fb 0, var(--paper) 340px),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Aptos", "Segoe UI", "Microsoft YaHei", sans-serif;
+      line-height: 1.55;
+    }
+
+    main {
+      width: min(1180px, calc(100% - 40px));
+      margin: 28px auto 56px;
+    }
+
+    .report-shell {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1.45fr 0.9fr;
+      gap: 28px;
+      padding: 34px 40px 30px;
+      border-bottom: 0;
+      background:
+        linear-gradient(120deg, rgba(11, 78, 162, 0.98), rgba(6, 26, 58, 0.98)),
+        var(--blue-dark);
+      color: #ffffff;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      right: 40px;
+      bottom: 0;
+      width: 220px;
+      height: 5px;
+      background: #58a6ff;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+
+    h1 {
+      font-size: 30px;
+      line-height: 1.2;
+      letter-spacing: 0;
+      font-weight: 800;
+    }
+
+    .subhead {
+      margin-top: 12px;
+      color: #cbd8ec;
+      font-size: 14px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      align-content: start;
+    }
+
+    .meta {
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.1);
+      padding: 12px 13px;
+      min-height: 72px;
+      border-radius: 3px;
+    }
+
+    .meta span,
+    .metric span,
+    .small-label {
+      display: block;
+      color: #b8c7df;
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .meta strong {
+      display: block;
+      font-size: 16px;
+    }
+
+    .privacy {
+      margin-top: 18px;
+      padding: 13px 16px;
+      background: rgba(255, 255, 255, 0.1);
+      border-left: 4px solid #58a6ff;
+      color: #dce7f7;
+      font-size: 13px;
+    }
+
+    section {
+      padding: 30px 40px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-child { border-bottom: 0; }
+
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--blue-dark);
+      padding-left: 12px;
+      border-left: 5px solid var(--blue);
+    }
+
+    .section-note {
+      color: var(--muted);
+      font-size: 13px;
+      text-align: right;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .callout {
+      padding: 20px 22px;
+      background: var(--blue-soft);
+      border: 1px solid #b9cff0;
+      border-radius: 4px;
+    }
+
+    .callout strong {
+      color: var(--risk);
+      font-size: 18px;
+    }
+
+    .conclusion-kicker {
+      margin-bottom: 12px;
+      font-size: 15px;
+      color: var(--ink);
+    }
+
+    .conclusion-kicker strong {
+      color: var(--risk);
+      font-size: 18px;
+    }
+
+    .conclusion-list {
+      display: grid;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .conclusion-list li {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 9px 10px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid #cfe0f6;
+      border-radius: 3px;
+      font-size: 13px;
+    }
+
+    .conclusion-list b {
+      color: var(--blue);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #f8d7d4;
+      color: var(--risk);
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .metric {
+      padding: 16px 15px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--blue);
+      min-height: 104px;
+      border-radius: 3px;
+    }
+
+    .metric b {
+      display: block;
+      font-size: 24px;
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+
+    .metric small {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .down { color: var(--risk); }
+    .up { color: var(--warn); }
+    .ok { color: var(--good); }
+    .info { color: var(--info); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      font-size: 13px;
+    }
+
+    th, td {
+      padding: 10px 11px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: var(--blue-dark);
+      font-size: 12px;
+      color: #ffffff;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    tbody tr:nth-child(even) td {
+      background: #f8fbff;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .nowrap { white-space: nowrap; }
+
+    .pill {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .pill-risk { background: #fde3df; color: var(--risk); }
+    .pill-warn { background: #fff0d1; color: var(--warn); }
+    .pill-good { background: #def3ef; color: var(--good); }
+    .pill-info { background: #e4efff; color: var(--info); }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      background: #ffffff;
+      padding: 18px;
+      border-radius: 3px;
+    }
+
+    .panel h3 {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 10px;
+    }
+
+    .day {
+      display: grid;
+      grid-template-columns: 92px 1fr 78px;
+      gap: 12px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .bar {
+      height: 10px;
+      background: #dfe8f5;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bar > i {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, #0b4ea2, #58a6ff);
+    }
+
+    .orders-zero { color: var(--risk); font-weight: 800; }
+    .orders-ok { color: var(--good); font-weight: 800; }
+
+    .actions {
+      display: grid;
+      gap: 12px;
+      counter-reset: action;
+    }
+
+    .action {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 12px;
+      padding: 15px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--blue);
+      border-radius: 3px;
+    }
+
+    .action::before {
+      counter-increment: action;
+      content: counter(action);
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    .action b { display: block; margin-bottom: 3px; }
+    .action p { color: #435168; font-size: 13px; }
+
+    .footer-note {
+      color: var(--muted);
+      font-size: 12px;
+      padding: 18px 36px 30px;
+      background: #edf3fb;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 900px) {
+      main { width: calc(100% - 24px); margin: 18px auto 36px; }
+      header, .summary, .two-col { grid-template-columns: 1fr; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+      section, header { padding-left: 20px; padding-right: 20px; }
+      table { display: block; overflow-x: auto; white-space: nowrap; }
+      .section-title { display: block; }
+      .section-note { text-align: left; margin-top: 4px; }
+    }
+
+    @media (max-width: 560px) {
+      .metrics, .meta-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 24px; }
+      .day { grid-template-columns: 82px 1fr; }
+      .day .num { grid-column: 2; text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article class="report-shell">
+      <header>
+        <div>
+          <h1>单品周报 | 脱敏版</h1>
+          <p class="subhead">周期：2026-06-22 至 2026-06-28；环比：2026-06-15 至 2026-06-21</p>
+          <div class="privacy">
+            本报告已脱敏：店铺、单品、ASIN、SKU、活动名称、搜索词和竞品标识均使用代号。金额、订单、点击、转化率、库存等经营数据完整保留。
+          </div>
+        </div>
+        <div class="meta-grid">
+          <div class="meta"><span>店铺</span><strong>店铺 A</strong></div>
+          <div class="meta"><span>站点</span><strong>美国站</strong></div>
+          <div class="meta"><span>单品</span><strong>单品 A</strong></div>
+          <div class="meta"><span>报告类型</span><strong>周度复盘</strong></div>
+        </div>
+      </header>
+
+      <section>
+        <div class="summary">
+          <div class="callout">
+            <div class="rating">本周评级：预警</div>
+            <p class="conclusion-kicker"><strong>核心结论：</strong>本周收入下滑的主因是商品端转化下降，不是广告流量成本上升。</p>
+            <ul class="conclusion-list">
+              <li><b>结果</b><span>销售额为 $140.41，环比下降 44.9%；订单为 14 单，环比下降 51.7%。</span></li>
+              <li><b>主因</b><span>Sessions 仅下降 12.3%，但会话转化率从 20.7% 降到 13.2%，自然单从 16 单降到 4 单。</span></li>
+              <li><b>排除项</b><span>广告 CPC 基本持平，CTR 上升，BuyBox 为 100%，暂不支持“流量成本上升”或 BuyBox 丢失作为主因。</span></li>
+              <li><b>下一步</b><span>优先人工核对价格、优惠、竞品动作、评价变化和页面展示，再决定广告侧降竞价、否定或扩量。</span></li>
+            </ul>
+          </div>
+          <div class="metrics">
+            <div class="metric"><span>销售额</span><b class="down">$140.41</b><small>环比 -44.9%</small></div>
+            <div class="metric"><span>订单</span><b class="down">14</b><small>环比 -51.7%</small></div>
+            <div class="metric"><span>会话转化率</span><b class="down">13.2%</b><small>环比 -7.4pp</small></div>
+            <div class="metric"><span>TACoS</span><b class="up">68.0%</b><small>环比 +27.4pp</small></div>
+          </div>
+        </div>
+
+        <div class="section-title">
+          <h2>一、周度总览</h2>
+          <p class="section-note">以商品端汇总数据为主，广告活动数据用于归因下钻。</p>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>指标</th>
+              <th class="num">本周</th>
+              <th class="num">上周</th>
+              <th class="num">变化</th>
+              <th>判断</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>销售额</td><td class="num">$140.41</td><td class="num">$254.74</td><td class="num down">-44.9%</td><td><span class="pill pill-risk">明显下降</span></td></tr>
+            <tr><td>销量 / 订单</td><td class="num">18 / 14</td><td class="num">32 / 29</td><td class="num down">-43.8% / -51.7%</td><td><span class="pill pill-risk">明显下降</span></td></tr>
+            <tr><td>Sessions / PV</td><td class="num">136 / 170</td><td class="num">155 / 191</td><td class="num down">-12.3% / -11.0%</td><td><span class="pill pill-warn">小幅下降</span></td></tr>
+            <tr><td>会话转化率</td><td class="num">13.2%</td><td class="num">20.7%</td><td class="num down">-7.4pp</td><td><span class="pill pill-risk">核心问题</span></td></tr>
+            <tr><td>自然单</td><td class="num">4</td><td class="num">16</td><td class="num down">-75.0%</td><td><span class="pill pill-risk">明显下降</span></td></tr>
+            <tr><td>广告单</td><td class="num">10</td><td class="num">13</td><td class="num down">-23.1%</td><td>下降幅度小于自然单</td></tr>
+            <tr><td>广告花费</td><td class="num">$95.50</td><td class="num">$103.48</td><td class="num down">-7.7%</td><td>花费基本维持</td></tr>
+            <tr><td>广告销售额</td><td class="num">$85.89</td><td class="num">$119.85</td><td class="num down">-28.3%</td><td><span class="pill pill-risk">产出下降</span></td></tr>
+            <tr><td>ACoS</td><td class="num">111.2%</td><td class="num">86.3%</td><td class="num up">+24.9pp</td><td><span class="pill pill-risk">效率恶化</span></td></tr>
+            <tr><td>TACoS</td><td class="num">68.0%</td><td class="num">40.6%</td><td class="num up">+27.4pp</td><td><span class="pill pill-risk">广告占比升高</span></td></tr>
+            <tr><td>广告 CPC / CTR</td><td class="num">$0.75 / 1.19%</td><td class="num">$0.76 / 0.86%</td><td class="num">持平 / +0.33pp</td><td>流量成本不是主因</td></tr>
+            <tr><td>广告 CVR</td><td class="num">7.9%</td><td class="num">9.5%</td><td class="num down">-1.6pp</td><td>广告转化下降</td></tr>
+            <tr><td>BuyBox</td><td class="num">100.0%</td><td class="num">99.4%</td><td class="num ok">+0.6pp</td><td><span class="pill pill-good">基本排除</span></td></tr>
+            <tr><td>退款率</td><td class="num">5.6%</td><td class="num">6.3%</td><td class="num ok">-0.7pp</td><td>继续观察</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <h2>二、每日走势</h2>
+          <p class="section-note">重点查看有花费但无订单的日期。</p>
+        </div>
+        <div class="two-col">
+          <div class="panel">
+            <h3>活动 A：精准匹配</h3>
+            <div class="timeline">
+              <div class="day"><span>06-22</span><div class="bar"><i style="width: 79%"></i></div><span class="num orders-ok">3 单</span></div>
+              <div class="day"><span>06-23</span><div class="bar"><i style="width: 77%"></i></div><span class="num orders-ok">1 单</span></div>
+              <div class="day"><span>06-24</span><div class="bar"><i style="width: 100%"></i></div><span class="num orders-zero">0 单</span></div>
+              <div class="day"><span>06-25</span><div class="bar"><i style="width: 43%"></i></div><span class="num orders-zero">0 单</span></div>
+              <div class="day"><span>06-26</span><div class="bar"><i style="width: 84%"></i></div><span class="num orders-ok">2 单</span></div>
+              <div class="day"><span>06-27</span><div class="bar"><i style="width: 49%"></i></div><span class="num orders-zero">0 单</span></div>
+              <div class="day"><span>06-28</span><div class="bar"><i style="width: 94%"></i></div><span class="num orders-zero">0 单</span></div>
+            </div>
+            <p class="subhead">合计花费 $56.31，订单 6，ACoS 100.7%。7 天里 4 天无订单。</p>
+          </div>
+          <div class="panel">
+            <h3>其他活动摘要</h3>
+            <table>
+              <thead>
+                <tr><th>活动</th><th class="num">花费</th><th class="num">订单</th><th class="num">ACoS</th><th>判断</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>活动 B：广泛匹配</td><td class="num">$25.79</td><td class="num">2</td><td class="num down">184.5%</td><td>效率明显恶化</td></tr>
+                <tr><td>活动 C：商品投放</td><td class="num">$7.40</td><td class="num">2</td><td class="num ok">46.3%</td><td>效率最好</td></tr>
+                <tr><td>活动 D：自动投放</td><td class="num">$6.00</td><td class="num">0</td><td class="num">无销售</td><td>需要收窄匹配</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <h2>三、广告活动检查</h2>
+          <p class="section-note">对比本周与上周，判断预算应保留、收缩还是扩量。</p>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>活动代号</th>
+              <th class="num">本周花费</th>
+              <th class="num">订单</th>
+              <th class="num">本周 ACoS</th>
+              <th class="num">上周 ACoS</th>
+              <th>判断</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>活动 A：精准匹配</td><td class="num">$56.31</td><td class="num">6</td><td class="num down">100.7%</td><td class="num down">102.0%</td><td>能出单，但长期偏贵，需要检查广告位加价和竞价策略。</td></tr>
+            <tr><td>活动 B：广泛匹配</td><td class="num">$25.79</td><td class="num">2</td><td class="num down">184.5%</td><td class="num">77.4%</td><td>本周效率明显恶化，建议先降竞价观察。</td></tr>
+            <tr><td>活动 C：商品投放</td><td class="num">$7.40</td><td class="num">2</td><td class="num ok">46.3%</td><td class="num ok">30.9%</td><td>当前效率最好，可继续补充相似投放对象。</td></tr>
+            <tr><td>活动 D：自动投放</td><td class="num">$6.00</td><td class="num">0</td><td class="num">无销售</td><td class="num">86.1%</td><td>本周无产出，需处理不匹配流量。</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <h2>四、关键词与投放处理规则</h2>
+          <p class="section-note">搜索词与竞品标识已脱敏，数值保留。</p>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>对象</th>
+              <th>本周表现</th>
+              <th>上周表现</th>
+              <th>建议</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="nowrap">精准匹配词 A</td>
+              <td>53 点击 / $53.30 / 6 单 / ACoS 95.3%</td>
+              <td>59 点击 / $57.03 / 5 单 / ACoS 102.0%</td>
+              <td>保留，但检查广告位加价。当前 bid $0.48，实际 CPC $1.01，明显高于竞价。</td>
+            </tr>
+            <tr>
+              <td class="nowrap">广泛匹配词 B</td>
+              <td>约 29 点击 / $20.01 / 2 单 / ACoS 143.1%</td>
+              <td>约 44 点击 / $32.85 / 6 单</td>
+              <td>降竞价 20%-30% 后观察，下周复查订单和 ACoS。</td>
+            </tr>
+            <tr>
+              <td class="nowrap">广泛匹配词 C</td>
+              <td>8 点击 / $5.78 / 0 单</td>
+              <td>5 点击 / $3.48 / 0 单</td>
+              <td>两周累计 13 点击 0 单，建议暂停。</td>
+            </tr>
+            <tr>
+              <td class="nowrap">商品投放对象 A</td>
+              <td>13 点击 / $6.94 / 2 单 / ACoS 43.4%</td>
+              <td>3 点击 / $1.74 / 1 单</td>
+              <td>保留，并继续找相似竞品投放对象。</td>
+            </tr>
+            <tr>
+              <td class="nowrap">需否定词根 X</td>
+              <td>集中出现在自动同类活动，累计消耗后无订单</td>
+              <td>上周也有相关无效流量</td>
+              <td>建议在对应活动中加词组否定，减少与商品场景不匹配的点击。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <h2>五、库存与排名快照</h2>
+          <p class="section-note">排名为当前快照，不作为周度销售额的直接归因。</p>
+        </div>
+        <div class="metrics">
+          <div class="metric"><span>可售库存</span><b>256</b><small>FBA 当前可售</small></div>
+          <div class="metric"><span>在途库存</span><b>62</b><small>补货在途</small></div>
+          <div class="metric"><span>日均销量</span><b>3.31</b><small>按接口返回口径</small></div>
+          <div class="metric"><span>预计可售天数</span><b class="ok">87 天</b><small>暂无断货风险</small></div>
+        </div>
+        <table style="margin-top: 14px;">
+          <thead><tr><th>排名口径</th><th class="num">当前值</th><th class="num">变化</th><th>备注</th></tr></thead>
+          <tbody>
+            <tr><td>大类排名</td><td class="num">44,974</td><td class="num ok">-8,943</td><td>当前快照，非周均值。</td></tr>
+            <tr><td>小类排名</td><td class="num">126</td><td class="num ok">-20</td><td>当前快照，说明近期排名有所改善。</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <h2>六、本周行动清单</h2>
+          <p class="section-note">以下为建议，未执行任何广告修改。</p>
+        </div>
+        <div class="actions">
+          <div class="action">
+            <div>
+              <b>检查商品端转化</b>
+              <p>从 06-24 起多个广告活动出现有花费但无订单的日期，同时自然单明显下降。优先核对价格、优惠、竞品动作、评价变化和页面展示。</p>
+            </div>
+          </div>
+          <div class="action">
+            <div>
+              <b>检查精准匹配词 A 的广告位加价</b>
+              <p>当前 bid 为 $0.48，实际 CPC 为 $1.01，明显高于竞价。建议检查搜索顶部加价和竞价策略。</p>
+            </div>
+          </div>
+          <div class="action">
+            <div>
+              <b>降低广泛匹配词 B 竞价</b>
+              <p>本周 ACoS 升至 143.1%-184.5% 区间，建议先降 20%-30%，下周复查订单和 ACoS。</p>
+            </div>
+          </div>
+          <div class="action">
+            <div>
+              <b>暂停广泛匹配词 C</b>
+              <p>两周累计 13 点击，花费 $9.26，0 单。建议暂停，避免继续消耗。</p>
+            </div>
+          </div>
+          <div class="action">
+            <div>
+              <b>处理自动同类活动的不匹配流量</b>
+              <p>对需否定词根 X 做词组否定，减少与商品场景不匹配的点击。</p>
+            </div>
+          </div>
+          <div class="action">
+            <div>
+              <b>扩展竞品投放</b>
+              <p>商品投放对象 A 两周都有订单且 ACoS 较低，建议继续补充 3-5 个相似商品投放对象。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="footer-note">
+        数据来源：SellerSpace MCP 查询结果。商品、店铺、ASIN、SKU、活动名、搜索词和竞品标识已脱敏；经营数据未脱敏。报告仅输出分析建议，未调用任何写操作。
+      </div>
+    </article>
+  </main>
+</body>
+</html>

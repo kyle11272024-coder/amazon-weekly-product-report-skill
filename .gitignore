@@ -1,0 +1,13 @@
+.env
+*.csv
+*.xlsx
+*.xls
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.pdf
+*.zip
+node_modules/
+.cache/
+__pycache__/
